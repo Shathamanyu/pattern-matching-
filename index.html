@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        form input[type="text"]:focus {
+            outline: none;
+            border: 2px solid #007bff;
+        }
+
+        form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <marquee behavior="" direction=""><h1>Pattern matching using regular expression</h1></marquee>
+    <form action="" id="f1" onsubmit="cor()">
+        Enter your first name :
+        <input type="text" id="in1" placeholder="sur name"><br><br>
+        Enter your last name :
+        <input type="text" id="in2" placeholder="last name"><br><br>
+        Enter your date of Birth :
+        <input type="text" id="in3" placeholder="Ex :31-03-2002"><br><br>
+        Enter your Email.id :
+        <input type="text" id="in4" placeholder="Ex :asdfgh@gmail.com"><br><br>
+        Enter your phone number :
+        <input type="text" id="in5" placeholder="Ex :234-345-8768"><br><br>
+        <input type="submit" value="verify">
+    </form>
+
+    <p id="qqq"></p>
+
+    <script>
+        let f1=document.getElementById("f1");
+        let in1=document.getElementById("in1");
+        let in2=document.getElementById("in2");
+        let in3=document.getElementById("in3");
+        let in4=document.getElementById("in4");
+        let in5=document.getElementById("in5");
+
+        let p1=document.getElementById("qqq");
+        
+        f1.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            
+            let a1 = /[A-Za-z]/;
+            let a3 = /(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(19|20)\d{2}/;
+            let a4 = /[A-Za-z0-9]+[@]+[A-Za-z]+.com/;
+            let a5 = /[0-9]{3}-[0-9]{3}-[0-9]{4}/
+            if(!a1.test(in1.value)){
+                in1.value=""
+                in1.style.border="3px solid red"
+                in1.style.backgroundColor="#f8d7da"
+            }
+            if(!a1.test(in2.value)){
+                in2.value=""
+                in2.style.border="3px solid red"
+                in2.style.backgroundColor="#f8d7da"
+            }
+            if(!a3.test(in3.value)){
+                in3.value=""
+                in3.style.border="3px solid red"
+                in3.style.backgroundColor="#f8d7da"
+            }
+            if(!a4.test(in4.value)){
+                in4.value=""
+                in4.style.border="3px solid red"
+                in4.style.backgroundColor="#f8d7da"
+            }
+            if(!a5.test(in5.value)){
+                in5.value=""
+                in5.style.border="3px solid red"
+                in5.style.backgroundColor="#f8d7da"
+            }
+            
+       }) 
+        
+
+
+        debugger
+        let pa=/hello/;
+        let s="hello";
+
+        console.log(pa.test(s));
+
+    </script>
+</body>
+</html>
